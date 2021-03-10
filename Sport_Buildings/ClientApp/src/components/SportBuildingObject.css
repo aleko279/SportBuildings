@@ -1,0 +1,80 @@
+﻿.borderPassportDiv, .borderSaertoMonacemebiDiv {
+    border-style: inset;
+}
+.pasportHeader {
+    position: relative;
+    left: 45%;
+}
+.SaertoMonacemebiHeader {
+    position: relative;
+    left: 41%;
+}
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+/* CollapseDiv css*/
+
+.CollapseDiv {
+    width: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    transition: 1.1s ease-out;
+    box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+    .CollapseDiv.off {
+        opacity: 0;
+        visibility: hidden;
+        filter: blur(8px);
+        transform: scale(0.33);
+        box-shadow: 1rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+
+@supports (offset-rotation: 0deg) {
+    offset-rotation: 0deg;
+    offset-path: path("M 250,100 S -300,500 -700,-200");
+
+    .CollapseDiv.off {
+        offset-distance: 100%;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .CollapseDiv {
+        offset-path: none;
+    }
+}
+
+.CollapseDiv h2 {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0;
+}
+
+.CollapseDiv .content {
+    padding: 1rem;
+}
+
+.CollapseDiv .actions {
+    border-top: 1px solid #ccc;
+    background: #eee;
+    padding: 0.5rem 1rem;
+}
+
+    .CollapseDiv .actions button {
+        border: 0;
+        background: #78f89f;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        line-height: 1;
+    }
+
+#centered-toggle-button {
+    position: absolute;
+}
